@@ -12,8 +12,8 @@ import (
 	"fmt"
 )
 
-// Graph represents a graph that might exist on a dashboard.
-type Graph struct {
+// Widget represents a widget that might exist on a Screenboard.
+type Widget struct {
 	Title      string     `json:"title"`
 	Events     []struct{} `json:"events"`
 	Definition struct {
@@ -27,11 +27,11 @@ type Graph struct {
 
 // Dashboard represents a user created dashboard. This is the full dashboard
 // struct when we load a dashboard in detail.
-type Dashboard struct {
-	Id          int     `json:"id"`
-	Description string  `json:"description"`
-	Title       string  `json:"title"`
-	Graphs      []Graph `json:"graphs"`
+type Screenboard struct {
+	Id          int       `json:"id"`
+	Description string    `json:"description"`
+	Title       string    `json:"title"`
+	Graphs      []Widget  `json:"graphs"`
 }
 
 // DashboardLite represents a user created dashboard. This is the mini
